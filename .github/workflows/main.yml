@@ -1,0 +1,16 @@
+on: push
+name: Update code in Prod server
+jobs:
+  web-deploy:
+    name: Deploy to Prod
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get latest code
+      uses: actions/checkout@v2
+    
+    - name: Update files
+      uses: shiva09/testdeploy
+      with:
+        server: ftpupload.net
+        username: epiz_33274604
+        password: ${{ secrets.FTP_PASSWORD }}
