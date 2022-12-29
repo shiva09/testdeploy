@@ -1,5 +1,9 @@
-on: push
 name: Update code in Prod server
+
+on:
+  pull_request:
+    branches: [master]
+
 jobs:
   web-deploy:
     name: Deploy to Prod
