@@ -3273,11 +3273,8 @@ function deploy(args, logger, timings) {
         timings.start("total");
         // header
         logger.all(`----------------------------------------------------------------`);
-        logger.all(`🚀 Thanks for using ftp-deploy. Let's deploy some stuff!   `);
+        logger.all(`FTP server deploy`);
         logger.all(`----------------------------------------------------------------`);
-        logger.all(`If you found this project helpful, please support it`);
-        logger.all(`by giving it a ⭐ on Github --> https://github.com/SamKirkland/FTP-Deploy-Action`);
-        logger.all(`or add a badge 🏷️ to your projects readme --> https://github.com/SamKirkland/FTP-Deploy-Action#badge`);
         logger.verbose(`Using the following excludes filters: ${JSON.stringify(args.exclude)}`);
         timings.start("hash");
         const localFiles = yield (0, localFiles_1.getLocalFiles)(args);
@@ -3708,7 +3705,7 @@ exports.FTPSyncProvider = FTPSyncProvider;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.ErrorCode = exports.syncFileDescription = exports.currentSyncFileVersion = void 0;
 exports.currentSyncFileVersion = "1.0.0";
-exports.syncFileDescription = "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action";
+exports.syncFileDescription = "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while)";
 var ErrorCode;
 (function (ErrorCode) {
     // The requested action is being initiated, expect another reply before proceeding with a new command.
@@ -7051,8 +7048,7 @@ function braceExpand (pattern, options) {
 
   assertValidPattern(pattern)
 
-  // Thanks to Yeting Li <https://github.com/yetingli> for
-  // improving this regexp to avoid a ReDOS vulnerability.
+
   if (options.nobrace || !/\{(?:(?!\{).)*\}/.test(pattern)) {
     // shortcut. no need to expand.
     return [pattern]
