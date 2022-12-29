@@ -9,7 +9,7 @@ jobs:
       uses: actions/checkout@v2
     
     - name: Update files
-      uses: shiva09/testdeploy@1
+      uses: ./
       with:
         server: ftpupload.net
         username: epiz_33274604
